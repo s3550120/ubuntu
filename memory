@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#total amount of memory details displayed.
+
+echo "Memory Space Information"
+free -t -m | grep "Total" | awk '{ print "Total Amount of Memory Space : "$2 " MB";
+print "Used Amount of Memory Space : "$3" MB";
+print "Free Amount of Memory : "$4" MB";
+
+}'
+
+
