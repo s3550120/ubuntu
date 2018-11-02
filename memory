@@ -9,6 +9,7 @@ print "Free Amount of Memory : "$4" MB";
 
 }'
 
+
 #display network configuration information.
 
 echo "Network information"
@@ -16,3 +17,9 @@ echo "Network information"
 ip addr show |grep -w inet |grep -v 127.0.0.1 | awk '{ print "IP Address : " $2 }' | cut -d "/" -f 1
 
 ip addr show | grep -w ether | awk '{ print "MAC Address : " $2 }'
+
+#display system uptime.
+
+echo "System Runtime - System has been running since: "
+
+date -d "$(</proc/uptime awk '{print $1}') seconds ago"
